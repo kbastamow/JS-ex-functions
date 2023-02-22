@@ -208,22 +208,21 @@ console.log(masDeCuatro(ejemplo));
 function esPrimo() {
     let numero = prompt("Entra un número");
     numero = +numero;
+    console.log(numero);
 
-    if (numero % 2 === 0 || numero % 3 === 0 || numero % 5 === 0) {
-        return true;
-    } else {
+    if (numero === 0 || numero === 1) {
         return false;
     }
+
+    for (i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            return false;
+        }
+    } 
+
+    return true;
 }
 
 console.log(esPrimo());
-
-
-
-
-
-
-
-
-
+    
 
