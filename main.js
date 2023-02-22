@@ -138,7 +138,7 @@ function esPalindromo(frase) {
 
     if (arrFrase.join() === arrFrase.reverse().join()) {    
     return "Es palindrome"    //must convert array to string, arrays don't compare values
- } else {
+     } else {
     return "No es palindrome"; 
 
  }
@@ -154,16 +154,70 @@ console.log(esPalindromo("Atar a la rata"));
 // Crea la función getPrecioMostrar para que devuelva una cadena de texto con formato precio con dos decimales. Para 2 debería devolver 2.00 €. 
 // Si la función no recibe un número debería devolver devolver 'no es un formato correcto'
 
-// function getPrecioMostrar {
-    
-// }
+function getPrecioMostrar(precio) {
+    if (typeof precio !== "number") {
+        return "no es un formato correcto";
+    }
+    precio = precio.toFixed(2);
+    return precio + " €";    
+}
+
+console.log(getPrecioMostrar(55235352.23423423));
 
 
 
 // Crea la función division que acepte como argumento dos números y devuelva el resultado de su división
+
+function division(a,b) {
+    if (typeof a !== "number" || typeof b !== "number") {
+        return "Los argumentos tienen que ser números."
+    } else {
+        return a / b;
+    }
+}     
+    
+
+console.log (division(30, 5));
+
+
+
+
 // Crea una función que dada una array de números, devuelve una nueva array que tenga solo los números que son 5 o más. Ejemplo entrada [3, 6, 8, 2] salida [6, 8]
+
+
+function masDeCuatro(numeros) {
+    let arrDos = [];
+    for (const numero of numeros) {
+        if (numero >= 5) {
+            arrDos.push(numero);
+        }
+    }
+
+    return(arrDos);
+}
+
+let ejemplo = [10, 5, 9, 12, 40, 2, 0, 6, 99];
+
+console.log(masDeCuatro(ejemplo));
+
+
 // Crea una aplicación que nos pida un número por prompt y con un método se lo pasamos por parámetro para que nos indique si es o no un número primo, debe devolver true si es primo sino false. 
 // Un número primo es aquel que solo puede dividirse entre 1 y sí mismo. Por ejemplo: 25 no es primo, ya que 25 es divisible entre 5, sin embargo, 17 si es primo.
+
+
+function esPrimo() {
+    let numero = prompt("Entra un número");
+    numero = +numero;
+
+    if (numero % 2 === 0 || numero % 3 === 0 || numero % 5 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(esPrimo());
+
 
 
 
